@@ -1,0 +1,81 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+<script src="webcam.js"></script>
+<script src="rps-dataset.js"></script>
+</head>
+<body>
+	<div>
+		<div>
+			<video autoplay playsinline muted id="wc" width="224" height="224"></video>
+			<img src="example.jpg"/>
+		</div>
+	</div>
+	<button type="button" id="0" onclick="handleButton(this)" >A</button>
+	<button type="button" id="1" onclick="handleButton(this)" >B</button>
+	<button type="button" id="2" onclick="handleButton(this)" >C</button>
+	<button type="button" id="3" onclick="handleButton(this)" >D</button>
+	<button type="button" id="4" onclick="handleButton(this)" >E</button>
+	<button type="button" id="5" onclick="handleButton(this)" >F</button>
+	<button type="button" id="6" onclick="handleButton(this)" >G</button>
+	<button type="button" id="7" onclick="handleButton(this)" >H</button>
+	<button type="button" id="8" onclick="handleButton(this)" >I</button>
+	<button type="button" id="9" onclick="handleButton(this)" >J</button>
+	<button type="button" id="10" onclick="handleButton(this)" >K</button>
+	<button type="button" id="11" onclick="handleButton(this)" >L</button>
+	<button type="button" id="12" onclick="handleButton(this)" >M</button>
+	<button type="button" id="13" onclick="handleButton(this)" >N</button>
+	<button type="button" id="14" onclick="handleButton(this)" >O</button>
+	<button type="button" id="15" onclick="handleButton(this)" >P</button>
+	<button type="button" id="16" onclick="handleButton(this)" >Q</button>
+	<button type="button" id="17" onclick="handleButton(this)" >R</button>
+	<button type="button" id="18" onclick="handleButton(this)" >S</button>
+	<button type="button" id="19" onclick="handleButton(this)" >T</button>
+	<button type="button" id="20" onclick="handleButton(this)" >U</button>
+	<button type="button" id="21" onclick="handleButton(this)" >V</button>
+	<button type="button" id="22" onclick="handleButton(this)" >W</button>
+	<button type="button" id="23" onclick="handleButton(this)" >X</button>
+	<button type="button" id="24" onclick="handleButton(this)" >Y</button>
+	<button type="button" id="25" onclick="handleButton(this)" >Z</button>
+
+	<div id="sampleCounts">
+		<div id="asamples">A samples:0</div>
+		<div id="bsamples">B samples:0</div>
+		<div id="csamples">C samples:0</div>
+		<div id="dsamples">D samples:0</div>
+		<div id="esamples">E samples:0</div>
+		<div id="fsamples">F samples:0</div>
+		<div id="gsamples">G samples:0</div>
+		<div id="hsamples">H samples:0</div>
+		<div id="isamples">I samples:0</div>
+		<div id="jsamples">J samples:0</div>
+		<div id="ksamples">K samples:0</div>
+		<div id="lsamples">L samples:0</div>
+		<div id="msamples">M samples:0</div>
+		<div id="nsamples">N samples:0</div>
+		<div id="osamples">O samples:0</div>
+		<div id="psamples">P samples:0</div>
+		<div id="qsamples">Q samples:0</div>
+		<div id="rsamples">R samples:0</div>
+		<div id="ssamples">S samples:0</div>
+		<div id="tsamples">T samples:0</div>
+		<div id="usamples">U samples:0</div>
+		<div id="vsamples">V samples:0</div>
+		<div id="wsamples">W samples:0</div>
+		<div id="xsamples">X samples:0</div>
+		<div id="ysamples">Y samples:0</div>
+		<div id="zsamples">Z samples:0</div>
+	</div>
+
+	<button type="button" id="train" onclick="doTraining()" >Train Network</button>
+	<div id="dummy">Once training is complete, click 'Start Predicting' to see predictions, and 'Stop Predicting' to end. Once you are happy with your model, click 'Download Model' to save the model to your local disk.</div>
+	<button type="button" id="startPredicting" onclick="startPredicting()" >Start Predicting</button>
+	<button type="button" id="stopPredicting" onclick="stopPredicting()" >Stop Predicting</button>
+    <button type="button" id="saveModel" onclick="saveModel()" >Download Model</button>
+	<div><input id="modelUpload" type="file" multiple accept=".json,.bin" onchange="uploadModel(event)"></div>
+	
+	<div id="prediction"></div>
+</body>
+
+<script src="main.js"></script>
+</html>
